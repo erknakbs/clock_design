@@ -1,0 +1,265 @@
+/* GOOGLE FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* ===== Main Css ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url(bg.jpeg) no-repeat center center;
+    background-size: cover;
+    /* background-color: #e4eefa; */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Clock Face ===== */
+.analog-clock {
+    background: #c4c3c0;
+    position: fixed;
+    top: 48px;
+    right: 550px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
+    /* border: 23px solid #762427; */
+    border: 23px ridge #762427;
+}
+
+.analog-clock::before {
+    z-index: 000;
+    content: "Clock";
+    position: absolute;
+    color: #424040;
+    font-size: 4rem;
+    font-weight: 600;
+    opacity: 0.07;
+}
+
+.analog-clock::after {
+    z-index: 000;
+    content: "e a";
+    position: absolute;
+    color: #091625;
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.11;
+    transform: translate(0px, 60px);
+}
+
+/* ====== Clock hour-numbers ===== */
+.analog-clock ul {
+    list-style-type: none;
+}
+
+.hour-container {
+    width: 460px;
+}
+
+.hour-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hour-numbers li {
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.hour-numbers .num {
+    color: #000000;
+    font-size: 1.8em;
+    font-weight: 500;
+    margin: 10px;
+}
+
+.hour-numbers li:nth-child(1) {
+    transform: rotate(90deg);
+}
+
+.hour-numbers li:nth-child(2) {
+    transform: rotate(180deg);
+}
+
+.hour-numbers li:nth-child(3) {
+    transform: rotate(270deg);
+}
+
+.hour-numbers li:nth-child(1) .num {
+    transform: rotate(-90deg);
+}
+
+.hour-numbers li:nth-child(2) .num {
+    transform: rotate(-180deg);
+}
+
+.hour-numbers li:nth-child(3) .num {
+    transform: rotate(-270deg);
+}
+
+/* ===== Clock hours-marks ===== */
+.hour-marks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hour-marks .mark {
+    background: #000000;
+    width: 2px;
+    height: 19px;
+}
+
+.hour-marks li {
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.hour-marks li:nth-child(1) {
+    transform: rotate(30deg);
+}
+
+.hour-marks li:nth-child(2) {
+    transform: rotate(60deg);
+}
+
+.hour-marks li:nth-child(3) {
+    transform: rotate(120deg);
+}
+
+.hour-marks li:nth-child(4) {
+    transform: rotate(150deg);
+}
+
+.hour-marks li:nth-child(5) {
+    transform: rotate(210deg);
+}
+
+.hour-marks li:nth-child(6) {
+    transform: rotate(240deg);
+}
+
+.hour-marks li:nth-child(7) {
+    transform: rotate(300deg);
+}
+
+.hour-marks li:nth-child(8) {
+    transform: rotate(330deg);
+}
+
+/* ===== Clock middle line ===== */
+.middle-lines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-lines .line {
+    background: #cee0f6;
+    width: 1px;
+    height: 140px;
+    opacity: 0.2;
+    margin-top: 55px;
+}
+
+.middle-lines li {
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.middle-lines li:nth-child(1) {
+    transform: rotate(90deg);
+}
+
+.middle-lines li:nth-child(2) {
+    transform: rotate(180deg);
+}
+
+.middle-lines li:nth-child(3) {
+    transform: rotate(270deg);
+}
+
+/*  ===== Clock hands ===== */
+.hands-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hand {
+    z-index: 888;
+    position: absolute;
+}
+
+.hr-hand {
+    width: 7px;
+    height: 200px;
+}
+
+.hr-hand::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: black;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(2, 2, 2, 0.5);
+}
+
+.min-hand {
+    width: 6px;
+    height: 230px;
+}
+
+.min-hand::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 110px;
+    background: #000000;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(2, 2, 2, 0.5);
+}
+
+.sec-hand {
+    width: 3px;
+    height: 220px;
+}
+
+.sec-hand::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: red;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(2, 2, 2, 0.5);
+
+}
+
+/* ===== Clock center dot ===== */
+.center-dot {
+    z-index: 999;
+    position: absolute;
+    background: #c4c3c0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 5px solid #2d2f41;
+}
